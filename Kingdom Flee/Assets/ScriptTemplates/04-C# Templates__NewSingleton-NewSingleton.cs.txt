@@ -1,0 +1,11 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class #SCRIPTNAME# : Singleton<#SCRIPTNAME#>
+{
+	protected override void Awake()
+	{
+		base.Awake();
+	}
+}
