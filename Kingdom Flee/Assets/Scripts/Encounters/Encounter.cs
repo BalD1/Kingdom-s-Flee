@@ -7,7 +7,7 @@ public class Encounter : MonoBehaviour
 {
     [field: SerializeField] [field: ReadOnly] public SO_Encounter data { get; private set; }
 
-    [field: SerializeField] public SpriteRenderer spriteRenderer { get; private set; }
+    [field: SerializeField] public Transform assetAnchor { get; private set; }
 
     private bool encounterFlag = false;
 
@@ -25,23 +25,40 @@ public class Encounter : MonoBehaviour
     {
         this.data = _data;
 
-        this.spriteRenderer.sprite = _data.sprite;
+        Instantiate(_data.prefabAsset, assetAnchor);
     }
 
     public void SelectChoice(int _choiceIdx)
     {
         SO_Encounter.S_Choices selected = this.data.choices[_choiceIdx];
 
+        int[] vals = null;
+        int valueIndex = 0;
+        if (selected.dialogueAfterChoice != null)
+        {
+            vals = new int[selected.dialogueAfterChoice.dialogueValues];
+        }
+
+        int val;
         foreach (var item in selected.rewards)
         {
+            val = item.GetCost();
+
+            if (vals != null && valueIndex < vals.Length)
+            {
+                vals[valueIndex] = val;
+                valueIndex++;
+            }
+
             switch (item.currency)
             {
                 case SO_Encounter.E_Currency.Followers:
-                    GameManager.UpdateFollowersCount(item.GetCost());
+                    GameManager.UpdateFollowersCount(val);
+                    
                     break;
 
                 case SO_Encounter.E_Currency.Gold:
-                    GameManager.AddGold(item.GetCost());
+                    GameManager.AddGold(val);
                     break;
 
                 default:
@@ -51,14 +68,22 @@ public class Encounter : MonoBehaviour
 
         foreach (var item in selected.losses)
         {
+            val = item.GetCost();
+
+            if (vals != null && valueIndex < vals.Length)
+            {
+                vals[valueIndex] = val;
+                valueIndex++;
+            }
+
             switch (item.currency)
             {
                 case SO_Encounter.E_Currency.Followers:
-                    GameManager.RemoveFollowers(item.GetCost());
+                    GameManager.RemoveFollowers(val);
                     break;
 
                 case SO_Encounter.E_Currency.Gold:
-                    GameManager.RemoveGold(item.GetCost());
+                    GameManager.RemoveGold(val);
                     break;
 
                 default:
@@ -70,6 +95,16 @@ public class Encounter : MonoBehaviour
         {
             item?.OnTrigger();
         }
+
+        if (selected.dialogueAfterChoice != null) DialogueManager.Instance.StartDialogue(selected.dialogueAfterChoice, EndEncouter, vals);
+        else EndEncouter();
+    }
+
+    private void EndEncouter()
+    {
+        Destroy(this.gameObject);
+        EncountersManager.Instance.SpawnNewEncounter();
+        GameManager.Instance.Player.SetMovementState(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,9 +119,9 @@ public class Encounter : MonoBehaviour
         encounterFlag = true;
         GameManager.currentEncounter = this;
 
-        if (data.dialogue != null)
+        if (data.dialogueBeforeChoice != null)
         {
-            DialogueManager.Instance.StartDialogue(data.dialogue, () =>
+            DialogueManager.Instance.StartDialogue(data.dialogueBeforeChoice, () =>
             {
                 UIManager.Instance.SetupEncounterWindow(this.data);
             });

@@ -17,7 +17,7 @@ public class EncountersManager : Singleton<EncountersManager>
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
 
         spawnPos.x += encounterSpawnDistanceFromPlayer;
-        spawnPos.y = .5f;
+        spawnPos.y = 0;
 
         Encounter.Create(firstEncounter, spawnPos);
 
@@ -26,9 +26,19 @@ public class EncountersManager : Singleton<EncountersManager>
             spawnPos = GameManager.Instance.Player.transform.position;
 
             spawnPos.x += encounterSpawnDistanceFromPlayer * (i + 2);
-            spawnPos.y = .5f;
+            spawnPos.y = 0;
 
             Encounter.Create(EncountersData.RandomElement(), spawnPos);
         }
+    }
+
+    public void SpawnNewEncounter()
+    {
+        Vector2 spawnPos = GameManager.Instance.Player.transform.position;
+
+        spawnPos.x += encounterSpawnDistanceFromPlayer;
+        spawnPos.y = 0;
+
+        Encounter.Create(EncountersData.RandomElement(), spawnPos);
     }
 }

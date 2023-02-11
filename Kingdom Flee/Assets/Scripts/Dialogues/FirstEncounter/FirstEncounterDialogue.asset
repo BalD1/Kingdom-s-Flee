@@ -15,12 +15,12 @@ MonoBehaviour:
   <ID>k__BackingField: first_encounter
   <ignoreGameState>k__BackingField: 0
   <dialogueLines>k__BackingField:
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: King
     <textLine>k__BackingField: ...
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian A
     <textLine>k__BackingField: Hey ! You ! Are you hu... Wha, Your Majesty ?! You're
       alive !
     <effects>k__BackingField:
@@ -28,35 +28,35 @@ MonoBehaviour:
       <value>k__BackingField: 0.02
     - <effect>k__BackingField: 1
       <value>k__BackingField: 25
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian B
     <textLine>k__BackingField: 'It''s the king ! '
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian C
     <textLine>k__BackingField: Long live the king !
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: King
     <textLine>k__BackingField: I indeed am still alive. And I am glad to see some
       of my people still are. We should not stay here. Follow me.
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian A
     <textLine>k__BackingField: But, king, there might still be some people left in
       the castle, shouldn't we wait for them ?
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian C
     <textLine>k__BackingField: We should prioritize the king's safety ! The enemy
       knights might spot us !
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+  - <speakerName>k__BackingField: Civilian A
     <textLine>k__BackingField: It's up to you, my king.
     <effects>k__BackingField:
     - <effect>k__BackingField: 0

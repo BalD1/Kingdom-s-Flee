@@ -30,6 +30,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject settingsPanel;
 
+    public GameObject HUD { get => hud; }
+
     protected override void Awake()
     {
         base.Awake();

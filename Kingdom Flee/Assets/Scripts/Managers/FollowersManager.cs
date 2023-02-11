@@ -14,8 +14,6 @@ public class FollowersManager : Singleton<FollowersManager>
     [SerializeField] private float randomRange = 1;
     [SerializeField] private float startDistanceBehindKing = 3;
 
-    public const float groundLevel = .875f;
-
     [InspectorButton(nameof(SpawnFollowers), ButtonWidth = 150)]
     [SerializeField] private bool respawnFollowers;
 
@@ -49,7 +47,7 @@ public class FollowersManager : Singleton<FollowersManager>
         {
             spawnPos = playerPos;
             spawnPos.x += Random.Range(-randomRange, randomRange) - startDistanceBehindKing - randomRange;
-            spawnPos.y = groundLevel;
+            spawnPos.y = 0;
 
             GameObject gO = Instantiate(followersPF, spawnPos, Quaternion.identity);
             gO.transform.SetParent(followersDirectory, true);

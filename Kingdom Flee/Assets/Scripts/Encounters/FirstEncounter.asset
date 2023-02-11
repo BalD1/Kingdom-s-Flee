@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
   m_Name: FirstEncounter
   m_EditorClassIdentifier: 
-  <sprite>k__BackingField: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  <prefabAsset>k__BackingField: {fileID: 8805866208007841540, guid: 6270cf437e9c8504ca1d5aba591953be, type: 3}
   <choices>k__BackingField:
   - <choiceName>k__BackingField: Wait for other people
     <losses>k__BackingField: []
@@ -23,6 +23,7 @@ MonoBehaviour:
       <currency>k__BackingField: 0
     <actions>k__BackingField:
     - {fileID: 0}
+    <dialogueAfterChoice>k__BackingField: {fileID: 0}
   - <choiceName>k__BackingField: Go now
     <losses>k__BackingField: []
     <rewards>k__BackingField:
@@ -32,4 +33,5 @@ MonoBehaviour:
       <currency>k__BackingField: 0
     <actions>k__BackingField:
     - {fileID: 0}
-  <dialogue>k__BackingField: {fileID: 11400000, guid: 0048ed07851097245ad3f96b44a1a144, type: 2}
+    <dialogueAfterChoice>k__BackingField: {fileID: 0}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 0048ed07851097245ad3f96b44a1a144, type: 2}

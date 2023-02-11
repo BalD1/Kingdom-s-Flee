@@ -11,11 +11,13 @@ public class SO_SingleDialogue : ScriptableObject
 
     [field: SerializeField] public DialogueLine[] dialogueLines { get; private set; }
 
+    [field: SerializeField] public int dialogueValues { get; private set; }
+
 
     [System.Serializable]
     public struct DialogueLine
     {
-        [field: SerializeField] public Sprite customPortrait { get; private set; }
+        [field: SerializeField] public string speakerName { get; private set; }
         [field: SerializeField] [field: TextArea] public string textLine { get; private set; }
         [field: SerializeField] public DialogueEffect[] effects { get; private set; }
     }

@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
-  m_Name: StartDialogue
+  m_Name: FirstEncounter_EC1
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: start_dialogue
+  <ID>k__BackingField: first_encounter_ec1
   <ignoreGameState>k__BackingField: 0
   <dialogueLines>k__BackingField:
-  - <speakerName>k__BackingField: King
-    <textLine>k__BackingField: 'Damn it ! How dare they attack us like that ! These
-      fools... Making me flee my very own kingdom... '
+  - <speakerName>k__BackingField: Narrator
+    <textLine>k__BackingField: Add {0} followers {1}
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.05
-  - <speakerName>k__BackingField: King
-    <textLine>k__BackingField: They'll pay ! But first, I have to find other people.
-      I won't stand long alone.
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Narrator
+    <textLine>k__BackingField: Bonjour {2} et {3}
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.05
+      <value>k__BackingField: 0.02

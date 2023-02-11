@@ -27,7 +27,6 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler
     public void OnClick()
     {
         UIManager.Instance.CloseEncounterWindow();
-        GameManager.Instance.Player.SetMovementState(true);
 
         GameManager.currentEncounter.SelectChoice(this.index);
     }

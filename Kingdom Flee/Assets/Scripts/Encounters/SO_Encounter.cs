@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Encounter", menuName = "Scriptable/Encounters")]
 public class SO_Encounter : ScriptableObject
 {
-    [field: SerializeField] public Sprite sprite { get; private set; }
+    [field: SerializeField] public GameObject prefabAsset { get; private set; }
 
     [field: SerializeField] public S_Choices[] choices { get; private set; }
 
-    [field: SerializeField] public SO_SingleDialogue dialogue { get; private set; }
+    [field: SerializeField] public SO_SingleDialogue dialogueBeforeChoice { get; private set; }
 
     public enum E_Currency
     {
@@ -54,6 +54,7 @@ public class SO_Encounter : ScriptableObject
         [field: SerializeField] public S_CostCurrency[] losses { get; private set; }
         [field: SerializeField] public S_CostCurrency[] rewards { get; private set; }
         [field: SerializeField] public SO_EncounterActions[] actions { get; private set; }
+        [field: SerializeField] public SO_SingleDialogue dialogueAfterChoice { get; private set; }
     }
 
 }

@@ -26,12 +26,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float onStartSkipWait_DURATION = .3f;
     private float onStartSkipWait_TIMER;
 
-    [SerializeField] private Image dialoguePortrait;
-
+    [SerializeField] private TextMeshProUGUI speakerNameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI pressKeyToContinue;
 
-        
+
+
     [field: SerializeField] public SO_SingleDialogue[] Dialogues { get; private set; }
 
 #if UNITY_EDITOR
@@ -44,6 +44,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] [ReadOnly] private SO_SingleDialogue currentDialogue;
     [SerializeField] [ReadOnly] private SO_SingleDialogue.DialogueLine currentLine;
     [SerializeField] [ReadOnly] private int currentLineIndex = -1;
+
+    private string currentLineText;
+
+    private string[] splittedLine;
+
+    private int[] values;
+    private int valuesIndex;
 
     private Action endDialogueAction;
 
@@ -105,17 +112,21 @@ public class DialogueManager : MonoBehaviour
     /// Starts the dialogue "<paramref name="dialogue"/>", activating "cinematic" mode.
     /// </summary>
     /// <param name="dialogue"></param>
-    public void StartDialogue(SO_SingleDialogue dialogue, Action actionAtDialogueEnd = null)
+    public void StartDialogue(SO_SingleDialogue dialogue, Action actionAtDialogueEnd = null, int[] _values = null)
     {
         GameManager.Instance.Player.playerInputs.D_anyKeyPressed += TryNextLine;
+        UIManager.Instance.HUD.SetActive(false);
 
-        dialoguePortrait.enabled = false;
 
         onStartSkipWait_TIMER = onStartSkipWait_DURATION;
 
         //PostproManager.Instance.SetBlurState(true);
 
         dialogueText.text = "";
+        speakerNameText.text = "";
+
+        values = _values;
+        valuesIndex = 0;
 
         currentDialogue = dialogue;
 
@@ -166,11 +177,23 @@ public class DialogueManager : MonoBehaviour
 
         currentLine = currentDialogue.dialogueLines[currentLineIndex];
 
-        dialoguePortrait.sprite = currentLine.customPortrait;
+        currentLineText = currentLine.textLine;
 
-        dialoguePortrait.enabled = true;
+        if (values != null && valuesIndex < values.Length)
+        {
+            string sub = "{" + valuesIndex + "}";
+        
+            while (currentLineText.Contains(sub) && valuesIndex < values.Length)
+            {
+                currentLineText.Replace(sub, values[valuesIndex].ToString());
+        
+                valuesIndex++;
+                 sub = "{" + valuesIndex + "}";
+            }
+        }
 
-        dialogueText.text = currentLine.textLine;
+        dialogueText.text = currentLineText;
+        speakerNameText.text = currentLine.speakerName;
 
         foreach (var item in currentLine.effects)
         {
@@ -238,6 +261,7 @@ public class DialogueManager : MonoBehaviour
             });
 
         GameManager.Instance.Player.playerInputs.D_anyKeyPressed -= TryNextLine;
+        UIManager.Instance.HUD.SetActive(true);
 
         //PostproManager.Instance.SetBlurState(true);
     }
