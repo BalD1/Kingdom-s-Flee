@@ -9,6 +9,8 @@ public class SO_Encounter : ScriptableObject
 
     [field: SerializeField] public S_Choices[] choices { get; private set; }
 
+    [field: SerializeField] public SO_SingleDialogue dialogue { get; private set; }
+
     public enum E_Currency
     {
         Followers,
@@ -18,8 +20,16 @@ public class SO_Encounter : ScriptableObject
     [System.Serializable]
     public struct S_CostCurrency
     {
+        [field: SerializeField] public bool randomCost { get; private set; }
         [field: SerializeField] public int cost { get; private set; }
+        [field: SerializeField] public int maxCost { get; private set; }
         [field: SerializeField] public E_Currency currency { get; private set; }
+
+        public int GetCost()
+        {
+            return randomCost ? Random.Range(cost, maxCost) :
+                                cost;
+        }
 
         public Sprite CurrencyImage()
         {

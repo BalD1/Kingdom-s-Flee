@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
         MainMenu,
         InGame,
         Pause,
+        GameOver,
     }
 
     private E_GameStates gameState;
@@ -35,12 +36,20 @@ public class GameManager : Singleton<GameManager>
             switch (gameState)
             {
                 case E_GameStates.MainMenu:
+                    if (SceneManager.GetActiveScene().name != MAIN_MENU) SceneManager.LoadScene(MAIN_MENU);
                     break;
 
                 case E_GameStates.InGame:
+                    if (SceneManager.GetActiveScene().name != MAIN_SCENE) SceneManager.LoadScene(MAIN_SCENE);
+                    Time.timeScale = 1;
                     break;
 
                 case E_GameStates.Pause:
+                    Time.timeScale = 0;
+                    break;
+
+                case E_GameStates.GameOver:
+                    Time.timeScale = 0;
                     break;
 
                 default:
@@ -61,14 +70,16 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
 
-        if (Player == null) SearchForPlayer();
-
         InitState();
     }
 
     private void Start()
     {
-        AddGold(10);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void SearchForPlayer()
@@ -99,10 +110,12 @@ public class GameManager : Singleton<GameManager>
     {
         UpdateFollowersCount(-amount);
     }
-    private static void UpdateFollowersCount(int amount)
+    public static void UpdateFollowersCount(int amount)
     {
         FollowersCount += amount;
         UIManager.Instance.UpdateFollowersCount();
+
+        if (FollowersCount <= 0) GameManager.Instance.GameState = E_GameStates.GameOver;
     }
 
     public static void AddGold(int amount)
@@ -113,7 +126,7 @@ public class GameManager : Singleton<GameManager>
     {
         UpdateGoldCount(-amount);
     }
-    private static void UpdateGoldCount(int amount)
+    public static void UpdateGoldCount(int amount)
     {
         GoldCount += amount;
         UIManager.Instance.UpdateGoldCount();
@@ -122,7 +135,12 @@ public class GameManager : Singleton<GameManager>
     private void InitState()
     {
         if (SceneManager.GetActiveScene().name == MAIN_MENU) gameState = E_GameStates.MainMenu;
-        else gameState = E_GameStates.InGame;
+        else
+        {
+            gameState = E_GameStates.InGame;
+
+            if (Player == null) SearchForPlayer();
+        }
     }
 
     private void Update()

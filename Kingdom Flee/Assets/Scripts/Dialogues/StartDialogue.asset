@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
+  m_Name: StartDialogue
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: start_dialogue
+  <ignoreGameState>k__BackingField: 0
+  <dialogueLines>k__BackingField:
+  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+    <textLine>k__BackingField: 'Damn it ! How dare they attack us like that ! These
+      fools... Making me flee my very own kingdom... '
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.05
+  - <customPortrait>k__BackingField: {fileID: 21300000, guid: dfef4ef8ab46d5a4ab8b897ca0b8707b, type: 3}
+    <textLine>k__BackingField: They'll pay ! But first, I have to find other people.
+      I won't stand long alone.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.05

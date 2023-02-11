@@ -37,11 +37,11 @@ public class Encounter : MonoBehaviour
             switch (item.currency)
             {
                 case SO_Encounter.E_Currency.Followers:
-                    GameManager.AddFollowers(item.cost);
+                    GameManager.UpdateFollowersCount(item.GetCost());
                     break;
 
                 case SO_Encounter.E_Currency.Gold:
-                    GameManager.AddGold(item.cost);
+                    GameManager.AddGold(item.GetCost());
                     break;
 
                 default:
@@ -54,11 +54,11 @@ public class Encounter : MonoBehaviour
             switch (item.currency)
             {
                 case SO_Encounter.E_Currency.Followers:
-                    GameManager.RemoveFollowers(item.cost);
+                    GameManager.RemoveFollowers(item.GetCost());
                     break;
 
                 case SO_Encounter.E_Currency.Gold:
-                    GameManager.RemoveGold(item.cost);
+                    GameManager.RemoveGold(item.GetCost());
                     break;
 
                 default:
@@ -83,6 +83,15 @@ public class Encounter : MonoBehaviour
 
         encounterFlag = true;
         GameManager.currentEncounter = this;
-        UIManager.Instance.SetupEncounterWindow(this.data);
+
+        if (data.dialogue != null)
+        {
+            DialogueManager.Instance.StartDialogue(data.dialogue, () =>
+            {
+                UIManager.Instance.SetupEncounterWindow(this.data);
+            });
+        }
+        else UIManager.Instance.SetupEncounterWindow(this.data);
+
     }
 }

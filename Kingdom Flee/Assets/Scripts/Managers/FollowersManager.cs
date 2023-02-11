@@ -31,6 +31,8 @@ public class FollowersManager : Singleton<FollowersManager>
 
     private void SpawnFollowers()
     {
+        if (startFollowersCount <= 0) return;
+
         if (followers.Length > 0)
         {
             foreach (var item in followers) Destroy(item);

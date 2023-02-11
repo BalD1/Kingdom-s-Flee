@@ -25,6 +25,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI followersCount;
     [SerializeField] private TextMeshProUGUI goldCount;
 
+    [SerializeField] private GameObject hud;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject settingsPanel;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,10 +44,20 @@ public class UIManager : Singleton<UIManager>
         switch (newState)
         {
             case GameManager.E_GameStates.InGame:
-
+                gameOverPanel.SetActive(false);
+                pausePanel.SetActive(false);
+                hud.SetActive(true);
                 break;
 
             case GameManager.E_GameStates.Pause:
+                hud.SetActive(true);
+                pausePanel.SetActive(true);
+                break;
+
+            case GameManager.E_GameStates.GameOver:
+                gameOverPanel.SetActive(true);
+                pausePanel.SetActive(false);
+                hud.SetActive(false);
                 break;
 
             default:
@@ -122,7 +137,44 @@ public class UIManager : Singleton<UIManager>
         foreach (var item in _data)
         {
             GameObject newLine = Instantiate(linePF, parent);
-            newLine.GetComponent<Line>().Setup(item.CurrencyImage(), item.cost);
+
+            if (item.randomCost)
+                newLine.GetComponent<Line>().Setup(item.CurrencyImage(), item.cost, item.maxCost);
+            else
+                newLine.GetComponent<Line>().Setup(item.CurrencyImage(), item.cost);
+        }
+    }
+
+    public void OnButtonClick(string button)
+    {
+        switch (button)
+        {
+            case "play":
+                GameManager.Instance.GameState = GameManager.E_GameStates.InGame;
+                break;
+
+            case "resume":
+                GameManager.Instance.GameState = GameManager.E_GameStates.InGame;
+                break;
+
+            case "restart":
+                GameManager.Instance.ReloadScene();
+                break;
+
+            case "settings":
+                settingsPanel.SetActive(true);
+                break;
+
+            case "mainmenu":
+                GameManager.Instance.GameState = GameManager.E_GameStates.MainMenu;
+                break;
+
+            case "quit":
+                Application.Quit();
+                break;
+
+            default:
+                break;
         }
     }
 }

@@ -16,11 +16,6 @@ public class King : Character
         base.Awake();
     }
 
-    private void Start()
-    {
-        SetMovementState(true);
-    }
-
     public void SetMovementState(bool _move)
     {
         move = _move;
