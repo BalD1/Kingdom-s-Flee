@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class FollowersManager : Singleton<FollowersManager>
 {
-    [SerializeField] [Range(0,50)] private int neededFollowers;
+    [SerializeField] [Range(0,50)] private int startFollowersCount;
 
-    [field: SerializeField] public Transform[] followers { get; private set; }
 
-    public float followersSpeed;
-    //private float followersSpeed;
-    private float followersVelocity;
+    [SerializeField] private Transform followersDirectory;
+
+    [field: SerializeField] public GameObject[] followers { get; private set; }
 
     [SerializeField] private float randomRange = 1;
+    [SerializeField] private float startDistanceBehindKing = 3;
 
+    public const float groundLevel = .875f;
+
+    [InspectorButton(nameof(SpawnFollowers), ButtonWidth = 150)]
+    [SerializeField] private bool respawnFollowers;
 
     protected override void Awake()
     {
@@ -23,45 +27,34 @@ public class FollowersManager : Singleton<FollowersManager>
     private void Start()
     {
         SpawnFollowers();
-
-        //followersSpeed = GameManager.Instance.Player.kingStats.speed;
-
-        GameManager.Instance.Player.playerInputs.D_movementInputs += SetFollowersVelocity;
-    }
-
-    private void FixedUpdate()
-    {
-        foreach (var item in followers)
-        {
-            Vector2 pos = item.transform.position;
-            pos.x += followersVelocity * Time.deltaTime;
-            item.transform.position = pos;
-        }
     }
 
     private void SpawnFollowers()
     {
+        if (followers.Length > 0)
+        {
+            foreach (var item in followers) Destroy(item);
+        }
         GameObject followersPF = GameAssets.Instance.FollowersPF;
-
-        followers = new Transform[neededFollowers];
 
         Vector2 playerPos = GameManager.Instance.Player.transform.position;
 
+        followers = new GameObject[startFollowersCount];
+
         Vector2 spawnPos;
 
-        for (int i = 0; i < neededFollowers; i++)
+        for (int i = 0; i < startFollowersCount; i++)
         {
             spawnPos = playerPos;
-            spawnPos.x += Random.Range(-randomRange, randomRange);
+            spawnPos.x += Random.Range(-randomRange, randomRange) - startDistanceBehindKing - randomRange;
+            spawnPos.y = groundLevel;
 
             GameObject gO = Instantiate(followersPF, spawnPos, Quaternion.identity);
+            gO.transform.SetParent(followersDirectory, true);
 
-            followers[i] = gO.transform;
+            followers[i] = gO;
         }
-    }
 
-    private void SetFollowersVelocity(float x)
-    {
-        followersVelocity = x * followersSpeed;
+        GameManager.AddFollowers(startFollowersCount);
     }
 }

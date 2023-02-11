@@ -2,30 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class King : MonoBehaviour
+public class King : Character
 {
     [field: SerializeField] public PlayerInputs playerInputs { get; private set; }
 
-    [field: SerializeField] public PlayerMotor playerMotor { get; private set; }
+    private bool move = false;
 
-    [field: SerializeField] public Rigidbody2D playerBody { get; private set; }
+    public delegate void D_MovementStateChange(bool newState);
+    public D_MovementStateChange D_movementStateChange;
 
-    [field: SerializeField] public SO_EntityStats kingStats { get; private set; }
-
-    private void Awake()
+    protected override void Awake()
     {
-#if UNITY_EDITOR
-        ComponentsNullCheck();
-#endif
-
-        playerInputs.D_movementInputs += playerMotor.SetDirection;
+        base.Awake();
     }
 
-    private void ComponentsNullCheck()
+    private void Start()
+    {
+        SetMovementState(true);
+    }
+
+    public void SetMovementState(bool _move)
+    {
+        move = _move;
+        this.motor.SetDirection(_move ? 1 : 0);
+
+        D_movementStateChange?.Invoke(_move);
+    }
+
+    protected override void ComponentsNullCheck()
     {
 #if UNITY_EDITOR
-        if (playerInputs == null) Debug.LogError(playerInputs + " was not set to Player.", this.gameObject);
-        if (playerMotor == null) Debug.LogError(playerMotor + " was not set to Player.", this.gameObject);
+        base.ComponentsNullCheck();
+
+        if (playerInputs == null) playerInputs = SearchComponent(typeof(PlayerInputs)) as PlayerInputs; 
 #endif
     }
 }

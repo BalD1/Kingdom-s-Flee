@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    private float deltaTime;
-    private int fps;
-
     public const string MAIN_SCENE = "MainScene";
     public const string MAIN_MENU = "MainMenu";
+
+    public static int FollowersCount { get; private set; }
+    public static int GoldCount { get; private set; }
+
+    public static Encounter currentEncounter = null;
 
     [field: SerializeField] public King Player { get; private set; }
 
@@ -64,6 +66,11 @@ public class GameManager : Singleton<GameManager>
         InitState();
     }
 
+    private void Start()
+    {
+        AddGold(10);
+    }
+
     private void SearchForPlayer()
     {
         Debug.LogError("Player Object was not set in GameManager", this.gameObject);
@@ -84,6 +91,34 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public static void AddFollowers(int amount)
+    {
+        UpdateFollowersCount(amount);
+    }
+    public static void RemoveFollowers(int amount)
+    {
+        UpdateFollowersCount(-amount);
+    }
+    private static void UpdateFollowersCount(int amount)
+    {
+        FollowersCount += amount;
+        UIManager.Instance.UpdateFollowersCount();
+    }
+
+    public static void AddGold(int amount)
+    {
+        UpdateGoldCount(amount);
+    }
+    public static void RemoveGold(int amount)
+    {
+        UpdateGoldCount(-amount);
+    }
+    private static void UpdateGoldCount(int amount)
+    {
+        GoldCount += amount;
+        UIManager.Instance.UpdateGoldCount();
+    }
+
     private void InitState()
     {
         if (SceneManager.GetActiveScene().name == MAIN_MENU) gameState = E_GameStates.MainMenu;
@@ -93,15 +128,6 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) PauseHandler();
-
-        CalculateFPS();
-    }
-
-    private void CalculateFPS()
-    {
-        deltaTime += Time.deltaTime;
-        deltaTime /= 2;
-        fps = (int)Mathf.Round(1 / deltaTime);
     }
 
     public void PauseHandler()
@@ -113,6 +139,5 @@ public class GameManager : Singleton<GameManager>
     private void OnGUI()
     {
         GUI.Label(new Rect(10, 0, 150, 25), "GameState : " + GameState.ToString());
-        GUI.Label(new Rect(10, 25, 80, 25), fps + " FPS");
     }
 }
