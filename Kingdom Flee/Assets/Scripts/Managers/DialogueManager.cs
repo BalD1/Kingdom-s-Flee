@@ -117,7 +117,6 @@ public class DialogueManager : MonoBehaviour
         GameManager.Instance.Player.playerInputs.D_anyKeyPressed += TryNextLine;
         UIManager.Instance.HUD.SetActive(false);
 
-
         onStartSkipWait_TIMER = onStartSkipWait_DURATION;
 
         //PostproManager.Instance.SetBlurState(true);
@@ -134,6 +133,8 @@ public class DialogueManager : MonoBehaviour
         dialogueContainer.LeanAlpha(1f, leanFadeTime)
             .setIgnoreTimeScale(true)
             .setOnComplete(() => ShowNextLine());
+
+        dialogueContainer.blocksRaycasts = true;
 
         if (actionAtDialogueEnd != null)
             endDialogueAction = actionAtDialogueEnd;
@@ -185,8 +186,8 @@ public class DialogueManager : MonoBehaviour
         
             while (currentLineText.Contains(sub) && valuesIndex < values.Length)
             {
-                currentLineText.Replace(sub, values[valuesIndex].ToString());
-        
+                currentLineText = currentLineText.Replace(sub, values[valuesIndex].ToString());
+
                 valuesIndex++;
                  sub = "{" + valuesIndex + "}";
             }
@@ -259,6 +260,8 @@ public class DialogueManager : MonoBehaviour
                 endDialogueAction?.Invoke();
                 ResetDialogue();
             });
+
+        dialogueContainer.blocksRaycasts = false;
 
         GameManager.Instance.Player.playerInputs.D_anyKeyPressed -= TryNextLine;
         UIManager.Instance.HUD.SetActive(true);

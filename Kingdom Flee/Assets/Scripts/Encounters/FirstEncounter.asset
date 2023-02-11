@@ -23,7 +23,7 @@ MonoBehaviour:
       <currency>k__BackingField: 0
     <actions>k__BackingField:
     - {fileID: 0}
-    <dialogueAfterChoice>k__BackingField: {fileID: 0}
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 283dad5a82775e942bb289990aa37ee8, type: 2}
   - <choiceName>k__BackingField: Go now
     <losses>k__BackingField: []
     <rewards>k__BackingField:
@@ -33,5 +33,5 @@ MonoBehaviour:
       <currency>k__BackingField: 0
     <actions>k__BackingField:
     - {fileID: 0}
-    <dialogueAfterChoice>k__BackingField: {fileID: 0}
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 588c61f3ddb7bac4c99eced84e2473d1, type: 2}
   <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 0048ed07851097245ad3f96b44a1a144, type: 2}

@@ -1409,7 +1409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.19800001}
   m_AnchorMax: {x: 1, y: 0.869}
-  m_AnchoredPosition: {x: -0.13586426, y: 0.9037781}
+  m_AnchoredPosition: {x: -0.13598633, y: 0.9037781}
   m_SizeDelta: {x: 0.27160645, y: 2.107666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354740806
@@ -1490,7 +1490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.014717598, y: 0.10300001}
   m_AnchorMax: {x: 0.98264074, y: 0.91300005}
-  m_AnchoredPosition: {x: 0.12669373, y: -0.12220001}
+  m_AnchoredPosition: {x: 0.12670898, y: -0.12220001}
   m_SizeDelta: {x: -0.7599001, y: 0.37590003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444006719
@@ -1763,7 +1763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.034575637, y: 0.48447502}
   m_AnchorMax: {x: 0.9733509, y: 0.95144445}
-  m_AnchoredPosition: {x: -2, y: -1.721405}
+  m_AnchoredPosition: {x: -2, y: -1.7213745}
   m_SizeDelta: {x: 4, y: 0.18930054}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &463379582
@@ -2255,7 +2255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79080266, y: 0}
   m_AnchorMax: {x: 0.9936816, y: 0.18338111}
-  m_AnchoredPosition: {x: -0.33325195, y: 1.0011902}
+  m_AnchoredPosition: {x: -0.33325195, y: 1.0011597}
   m_SizeDelta: {x: -0.123046875, y: -1.7335052}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638175939
@@ -2851,7 +2851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.00848371, y: 0.03225645}
   m_AnchorMax: {x: 0.9938931, y: 0.95900005}
-  m_AnchoredPosition: {x: 0.3531494, y: 1.5001221}
+  m_AnchoredPosition: {x: 0.35327148, y: 1.5001221}
   m_SizeDelta: {x: -2.8087006, y: 0.89780045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724063931
@@ -3220,7 +3220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.00848371, y: 0.03225645}
   m_AnchorMax: {x: 0.9938931, y: 0.95900005}
-  m_AnchoredPosition: {x: 0.3531494, y: 0.52557}
+  m_AnchoredPosition: {x: 0.3531494, y: 0.52557373}
   m_SizeDelta: {x: -2.8087, y: -1.0512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771557545
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <firstEncounter>k__BackingField: {fileID: 11400000, guid: 6cfe43d1875ca2c49a4d3b5ba49e7814, type: 2}
   <EncountersData>k__BackingField:
-  - {fileID: 11400000, guid: 6cfe43d1875ca2c49a4d3b5ba49e7814, type: 2}
+  - {fileID: 11400000, guid: ac388b455910dd744a65ed5dbc98e3d9, type: 2}
   <encounterSpawnDistanceFromPlayer>k__BackingField: 15
   <encountersSpawnCount>k__BackingField: 3
 --- !u!1 &1161393045
@@ -5594,7 +5594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437887988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.5, z: 1}
+  m_LocalPosition: {x: 0, y: 6.5, z: 10}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7451,7 +7451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.869}
   m_AnchorMax: {x: 0.181125, y: 1}
-  m_AnchoredPosition: {x: 0.47119, y: 0.044998}
+  m_AnchoredPosition: {x: 0.4711914, y: 0.04498291}
   m_SizeDelta: {x: 0.94238, y: 0.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019804653
@@ -7546,7 +7546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.0006777197, y: 0.023727538}
   m_AnchorMax: {x: 0.20110805, y: 0.16128194}
-  m_AnchoredPosition: {x: 1.7039795, y: -0.74868774}
+  m_AnchoredPosition: {x: 1.7038574, y: -0.7486572}
   m_SizeDelta: {x: -2.3406372, y: -1.469574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106675071
@@ -7571,9 +7571,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.5424528, g: 1, b: 0.9534468, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.54509807, g: 1, b: 0.95686275, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

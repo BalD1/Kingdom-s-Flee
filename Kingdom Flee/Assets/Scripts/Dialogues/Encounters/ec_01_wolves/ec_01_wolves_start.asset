@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
-  m_Name: FirstEncounter_EC1
+  m_Name: ec_01_wolves_start
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: first_encounter_ec1
+  <ID>k__BackingField: ec_01_wolves_start
   <ignoreGameState>k__BackingField: 0
   <dialogueLines>k__BackingField:
-  - <speakerName>k__BackingField: Narrator
-    <textLine>k__BackingField: Add {0} followers {1}
+  - <speakerName>k__BackingField: King
+    <textLine>k__BackingField: Wow quiet ! Wolves ! They're asleep.
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-  - <speakerName>k__BackingField: Narrator
-    <textLine>k__BackingField: Bonjour {2} et {3}
+  - <speakerName>k__BackingField: Civilian A
+    <textLine>k__BackingField: What's that ? I can see something near them...
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Civilian B
+    <textLine>k__BackingField: It looks like some gold.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  <dialogueValuesCount>k__BackingField: 0

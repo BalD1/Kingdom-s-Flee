@@ -11,7 +11,7 @@ public class SO_SingleDialogue : ScriptableObject
 
     [field: SerializeField] public DialogueLine[] dialogueLines { get; private set; }
 
-    [field: SerializeField] public int dialogueValues { get; private set; }
+    [field: SerializeField] public int dialogueValuesCount { get; private set; }
 
 
     [System.Serializable]

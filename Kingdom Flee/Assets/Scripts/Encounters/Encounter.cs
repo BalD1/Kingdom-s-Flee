@@ -36,7 +36,7 @@ public class Encounter : MonoBehaviour
         int valueIndex = 0;
         if (selected.dialogueAfterChoice != null)
         {
-            vals = new int[selected.dialogueAfterChoice.dialogueValues];
+            vals = new int[selected.dialogueAfterChoice.dialogueValuesCount];
         }
 
         int val;

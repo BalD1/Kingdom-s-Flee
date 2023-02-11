@@ -36,7 +36,7 @@ public class EncountersManager : Singleton<EncountersManager>
     {
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
 
-        spawnPos.x += encounterSpawnDistanceFromPlayer;
+        spawnPos.x += encounterSpawnDistanceFromPlayer * encountersSpawnCount;
         spawnPos.y = 0;
 
         Encounter.Create(EncountersData.RandomElement(), spawnPos);
