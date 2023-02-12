@@ -4816,6 +4816,7 @@ MonoBehaviour:
   <EncountersData>k__BackingField:
   - {fileID: 11400000, guid: 34d198377d6860b4bb3eb289a3d35cec, type: 2}
   - {fileID: 11400000, guid: ac388b455910dd744a65ed5dbc98e3d9, type: 2}
+  - {fileID: 11400000, guid: 1e1f28eba63d1f4468f0eda905ea579e, type: 2}
   <encounterSpawnDistanceFromPlayer>k__BackingField: 15
   <encountersSpawnCount>k__BackingField: 3
 --- !u!1 &1161393045

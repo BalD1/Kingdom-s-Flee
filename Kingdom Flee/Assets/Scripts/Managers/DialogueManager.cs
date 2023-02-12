@@ -270,6 +270,8 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue()
     {
+        audioSource.Stop();
+
         dialogueContainer.LeanAlpha(0, leanFadeTime)
             .setIgnoreTimeScale(true)
             .setOnComplete(

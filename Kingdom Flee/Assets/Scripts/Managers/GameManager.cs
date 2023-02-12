@@ -77,7 +77,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        AddGold(startCoin);
+        if (GameState == E_GameStates.InGame) AddGold(startCoin);
     }
 
     public void ReloadScene()

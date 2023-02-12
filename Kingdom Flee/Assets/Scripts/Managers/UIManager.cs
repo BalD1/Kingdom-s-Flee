@@ -61,9 +61,9 @@ public class UIManager : Singleton<UIManager>
         switch (newState)
         {
             case GameManager.E_GameStates.InGame:
-                gameOverPanel.SetActive(false);
-                pausePanel.SetActive(false);
-                hud.SetActive(true);
+                gameOverPanel?.SetActive(false);
+                pausePanel?.SetActive(false);
+                hud?.SetActive(true);
                 break;
 
             case GameManager.E_GameStates.Pause:
