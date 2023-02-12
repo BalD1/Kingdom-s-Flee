@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,13 +16,15 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler
 
     private SO_Encounter.S_Choices choice;
 
-    public void Setup(SO_Encounter.S_Choices _choice, int _index)
+    public void Setup(SO_Encounter.S_Choices _choice, int _index, bool canClic = true)
     {
         choice = _choice;
 
         textMesh.text = choice.choiceName;
 
         index = _index;
+
+        this.button.interactable = canClic;
     }
 
     public void OnClick()

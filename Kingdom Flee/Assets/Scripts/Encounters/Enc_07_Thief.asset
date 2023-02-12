@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_07_Thief
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 5551075802894491764, guid: a90512cba30c7a54eb66819288a95b6a, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Intercept the thief
+    <losses>k__BackingField: []
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 0
+      <cost>k__BackingField: 2
+      <maxCost>k__BackingField: 0
+      <currency>k__BackingField: 1
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 54f327428d57d144cbc94637b356cacc, type: 2}
+  - <choiceName>k__BackingField: Help the person
+    <losses>k__BackingField: []
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 0
+      <cost>k__BackingField: 1
+      <maxCost>k__BackingField: 0
+      <currency>k__BackingField: 0
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: cb2d774c5347bba40acd1843bf91c6f9, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 2c5eacc583f61c64ca09e023cf4a4105, type: 2}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
+  m_Name: ec_06_mercenaries_start
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: ec_05_survivorsgroup_start
+  <ignoreGameState>k__BackingField: 0
+  <dialogueLines>k__BackingField:
+  - <speakerName>k__BackingField: King
+    <textLine>k__BackingField: You. I know you. You're mercenaries, aren't you ?
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  - <speakerName>k__BackingField: Mercenary A
+    <textLine>k__BackingField: Well, if it isn't our beloved king ! Things are not
+      looking so good for you these days.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  - <speakerName>k__BackingField: Civilian A
+    <textLine>k__BackingField: Your majesty, please stand back, they have weapons
+      and stuff
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  - <speakerName>k__BackingField: King
+    <textLine>k__BackingField: 'It''s alright, they could help us. They''re not after
+      my head, they''re after money. '
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  - <speakerName>k__BackingField: Mercenary A
+    <textLine>k__BackingField: 'Come now, king. We indeed love money, but being seen
+      with you could bring us problems. '
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  - <speakerName>k__BackingField: Mercenary B
+    <textLine>k__BackingField: I have a proposition instead. There were people really
+      not far from here, how about we sell you the intel ?
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+  <dialogueValuesCount>k__BackingField: 0

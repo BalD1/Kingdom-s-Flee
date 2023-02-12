@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
   m_Name: ec_03_survivors_ch1
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: ec_02_bandits_ch1
+  <ID>k__BackingField: ec_03_survivors_ch1
   <ignoreGameState>k__BackingField: 0
   <dialogueLines>k__BackingField:
   - <speakerName>k__BackingField: Narrator

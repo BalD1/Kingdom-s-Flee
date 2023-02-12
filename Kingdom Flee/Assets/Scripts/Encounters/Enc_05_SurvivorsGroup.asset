@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_05_SurvivorsGroup
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 5008211463528086443, guid: b09233987b3886447adb09ea3693e289, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Meet them
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 7
+      <currency>k__BackingField: 0
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 2
+      <maxCost>k__BackingField: 7
+      <currency>k__BackingField: 0
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 3
+      <currency>k__BackingField: 1
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: c657f31dd01b2c24d90988d0e3f5ea70, type: 2}
+  - <choiceName>k__BackingField: Ignore them
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 1
+      <currency>k__BackingField: 0
+    <rewards>k__BackingField: []
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 622f701667a604b4d89a3637fda04893, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 0bd2bc116ed554442837e3aca4bb464f, type: 2}

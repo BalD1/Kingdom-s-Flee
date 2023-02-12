@@ -6,7 +6,7 @@
             "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
             "actions": [
                 {
-                    "name": "AnyKey",
+                    "name": "SkipText",
                     "type": "Button",
                     "id": "aef57ab4-6fe5-4539-a48b-ccbb7d258b3e",
                     "expectedControlType": "Button",
@@ -19,11 +19,33 @@
                 {
                     "name": "",
                     "id": "94107b65-1745-4416-81f5-0a11d8fa22f4",
-                    "path": "<Keyboard>/anyKey",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "AnyKey",
+                    "action": "SkipText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e34af15-e211-4c4f-8d25-1b56e9b86649",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SkipText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5de60fa-424c-4c23-b4f3-3253d50cb44b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SkipText",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -117,8 +117,16 @@ public class UIManager : Singleton<UIManager>
 
             SO_Encounter.S_Choices currentChoice = _data.choices[i];
 
+            int totalMoneyToPay = 0;
+
+            foreach (var item in currentChoice.losses)
+            {
+                if (item.currency == E_Currency.Gold)
+                    totalMoneyToPay += item.cost;
+            }
+
             ChoiceButton cb = newButton.GetComponent<ChoiceButton>();
-            cb.Setup(currentChoice, i);
+            cb.Setup(currentChoice, i, totalMoneyToPay <= GameManager.Instance.GoldCount);
 
             currentChoiceButtons[i] = cb;
         }

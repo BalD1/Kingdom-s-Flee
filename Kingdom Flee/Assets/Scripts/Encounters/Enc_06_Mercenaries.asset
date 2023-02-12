@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_06_Mercenaries
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 4532493709256975761, guid: c5eb9fd74198a4049a277381851be2c9, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Accept the proposition
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 0
+      <cost>k__BackingField: 5
+      <maxCost>k__BackingField: 0
+      <currency>k__BackingField: 1
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 2
+      <maxCost>k__BackingField: 3
+      <currency>k__BackingField: 0
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: a743eae60fcaa174ab9cb356618fc4a0, type: 2}
+  - <choiceName>k__BackingField: Don't accept
+    <losses>k__BackingField: []
+    <rewards>k__BackingField: []
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 60e2cff96398974409eb80b79fcfe6d6, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 798d0830ef348ce4e9de31c4fab3c129, type: 2}

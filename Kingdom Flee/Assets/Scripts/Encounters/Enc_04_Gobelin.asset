@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_04_Gobelin
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 447598977320403784, guid: b11c0ce365f2ae943849f76e2b3874b7, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Take the gold from the gobelins
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 1
+      <maxCost>k__BackingField: 3
+      <currency>k__BackingField: 0
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 0
+      <cost>k__BackingField: 5
+      <maxCost>k__BackingField: 0
+      <currency>k__BackingField: 1
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 8458f4a5763ac194390bf52053376b89, type: 2}
+  - <choiceName>k__BackingField: Let the gobelins alone
+    <losses>k__BackingField: []
+    <rewards>k__BackingField: []
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: b10b3ba5d6349d64b94dbcd7f108f252, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 52fbaf470d115a3439a6ebc8c4ed6108, type: 2}

@@ -7,12 +7,16 @@ public class EncountersManager : Singleton<EncountersManager>
     [field: SerializeField] public SO_Encounter firstEncounter { get; private set; }
 
     [field: SerializeField] public SO_Encounter[] EncountersData { get; private set; }
+    private SO_Encounter lastEncounter;
 
     [field: SerializeField] public float encounterSpawnDistanceFromPlayer { get; private set; }
 
     [field: SerializeField] public int encountersSpawnCount { get; private set; }
 
     private int skipEncounterCount = 1;
+
+    private const int WHILE_LOOP_FAIL_SAFE_COUNT = 10;
+    private int whileFailSafe;
 
     private void Start()
     {
@@ -30,7 +34,7 @@ public class EncountersManager : Singleton<EncountersManager>
             spawnPos.x += encounterSpawnDistanceFromPlayer * (i + 2);
             spawnPos.y = 0;
 
-            Encounter.Create(EncountersData.RandomElement(), spawnPos);
+            SpawnEncounter(spawnPos);
         }
     }
 
@@ -47,6 +51,21 @@ public class EncountersManager : Singleton<EncountersManager>
         spawnPos.x += encounterSpawnDistanceFromPlayer * encountersSpawnCount;
         spawnPos.y = 0;
 
-        Encounter.Create(EncountersData.RandomElement(), spawnPos);
+        SpawnEncounter(spawnPos);
+    }
+
+    private void SpawnEncounter(Vector2 spawnPos)
+    {
+        SO_Encounter randEncounter = null;
+
+        do
+        {
+            randEncounter = EncountersData.RandomElement();
+            whileFailSafe++;
+
+        } while (randEncounter == lastEncounter && whileFailSafe < WHILE_LOOP_FAIL_SAFE_COUNT);
+
+        lastEncounter = randEncounter;
+        Encounter.Create(randEncounter, spawnPos);
     }
 }
