@@ -20,11 +20,11 @@ public class EncountersManager : Singleton<EncountersManager>
 
     private void Start()
     {
+        return;
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
 
         spawnPos.x += encounterSpawnDistanceFromPlayer;
         spawnPos.y = 0;
-
         Encounter.Create(firstEncounter, spawnPos);
 
         for (int i = 0; i < encountersSpawnCount; i++)

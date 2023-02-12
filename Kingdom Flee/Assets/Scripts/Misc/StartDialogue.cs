@@ -9,6 +9,11 @@ public class StartDialogue : MonoBehaviour
 
     private void Start()
     {
+        Invoke(nameof(BeginDialogue), 1);
+    }
+
+    private void BeginDialogue()
+    {
         bool res = DialogueManager.Instance.TryStartDialogue(startDialogue, () =>
         {
             GameManager.Instance.Player.SetMovementState(true);

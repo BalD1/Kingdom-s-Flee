@@ -1032,9 +1032,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 234.4, y: 1}
+  m_Size: {x: 27, y: 1}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1047,7 +1047,7 @@ Transform:
   m_GameObject: {fileID: 276639462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.521751, z: 0}
-  m_LocalScale: {x: 2.4181252, y: 0.9635072, z: 2.7528777}
+  m_LocalScale: {x: 2.5, y: 0.9635072, z: 2.7528777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 285724232}
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 0.3
+  debug: 0
 --- !u!1 &279281788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,9 +1266,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 564.53156, y: 3.39}
+  m_Size: {x: 65, y: 3.39}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1280,8 +1281,8 @@ Transform:
   m_GameObject: {fileID: 285724230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.87, z: 0}
-  m_LocalScale: {x: 1.16914, y: 1.16914, z: 1.16914}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1.16914, z: 1.16914}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 276639464}
   m_Father: {fileID: 521832030}
@@ -1300,6 +1301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 0.3
+  debug: 1
 --- !u!1 &288443526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,6 +5295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 0.7
+  debug: 0
 --- !u!212 &1181537029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5339,9 +5342,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 564.5316, y: 3.39}
+  m_Size: {x: 50.8, y: 3.39}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -7257,9 +7260,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 92.77, y: 1}
+  m_Size: {x: 9.8, y: 1}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -7291,6 +7294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 0.7
+  debug: 0
 --- !u!1 &1702279412
 GameObject:
   m_ObjectHideFlags: 0

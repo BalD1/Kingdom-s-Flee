@@ -8,10 +8,12 @@ public class Parralax : MonoBehaviour
 
     private float length, startPos;
 
+    public bool debug;
+
     private void Start()
     {
         startPos = this.transform.position.x;
-        length = this.GetComponent<SpriteRenderer>().bounds.size.x;
+        length = this.GetComponent<SpriteRenderer>().bounds.size.x / 4;
     }
 
     private void LateUpdate()

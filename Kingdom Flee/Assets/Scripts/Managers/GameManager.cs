@@ -73,12 +73,25 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
 
         InitState();
+
+        SceneManager.sceneLoaded += OnSceneReset;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnSceneReset(Scene scene, LoadSceneMode mode)
+    {
+        LeanTween.cancelAll();
+    }
+    private void OnSceneUnloaded(Scene scene)
+    {
+        LeanTween.cancelAll();
     }
 
     private void Start()
     {
         if (GameState == E_GameStates.InGame) AddGold(startCoin);
     }
+
 
     public void ReloadScene()
     {
@@ -145,7 +158,7 @@ public class GameManager : Singleton<GameManager>
         else
         {
             gameState = E_GameStates.InGame;
-
+            Time.timeScale = 1;
             if (Player == null) SearchForPlayer();
         }
     }

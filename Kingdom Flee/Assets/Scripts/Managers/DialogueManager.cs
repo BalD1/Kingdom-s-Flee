@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 //using static UnityEditor.Progress;
 
@@ -72,6 +73,11 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
 
+        SceneManager.sceneUnloaded += OnSceneReset;
+    }
+
+    private void OnSceneReset(Scene scene)
+    {
         ResetDialogue();
     }
 
@@ -163,6 +169,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void TryNextLine()
     {
+        if (GameManager.Instance.GameState == GameManager.E_GameStates.Pause) return;
         if (onStartSkipWait_TIMER > 0) return;
         if (currentDialogue == null || currentLine.textLine == null) return;
         if (UnfinishedEffectsCount > 0 && allowSkip_TIMER <= 0)
@@ -254,6 +261,7 @@ public class DialogueManager : MonoBehaviour
         if (pressKeyToContinue == null) return;
         LeanTween.delayedCall(3, () => {
 
+            if (pressKeyToContinue == null) return;
             if (pressKeyToContinue.alpha <= 0) return;
 
             LeanTween.scale(pressKeyToContinue.rectTransform, Vector3.one * 1.2f, 0.5f)
@@ -270,7 +278,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue()
     {
-        audioSource.Stop();
+        audioSource?.Stop();
 
         dialogueContainer.LeanAlpha(0, leanFadeTime)
             .setIgnoreTimeScale(true)

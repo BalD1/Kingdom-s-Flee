@@ -77,6 +77,9 @@ public class UIManager : Singleton<UIManager>
                 hud.SetActive(false);
                 break;
 
+            case GameManager.E_GameStates.MainMenu:
+                break;
+
             default:
                 Debug.LogError(newState + " was not found in switch statement.", Instance.gameObject);
                 break;
