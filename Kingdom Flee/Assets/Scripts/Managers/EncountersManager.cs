@@ -12,6 +12,8 @@ public class EncountersManager : Singleton<EncountersManager>
 
     [field: SerializeField] public int encountersSpawnCount { get; private set; }
 
+    private int skipEncounterCount = 1;
+
     private void Start()
     {
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
@@ -34,6 +36,12 @@ public class EncountersManager : Singleton<EncountersManager>
 
     public void SpawnNewEncounter()
     {
+        if (skipEncounterCount > 0)
+        {
+            skipEncounterCount--;
+            return;
+        }
+
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
 
         spawnPos.x += encounterSpawnDistanceFromPlayer * encountersSpawnCount;

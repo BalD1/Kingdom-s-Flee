@@ -76,10 +76,29 @@ public class DialogueManager : MonoBehaviour
         ResetDialogue();
     }
 
+    private void Start()
+    {
+        GameManager.Instance.D_gameStateChange += GameStateWatcher;
+    }
+
     private void Update()
     {
         if (allowSkip_TIMER > 0) allowSkip_TIMER -= Time.deltaTime;
         if (onStartSkipWait_TIMER > 0) onStartSkipWait_TIMER -= Time.deltaTime;
+    }
+
+    private void GameStateWatcher()
+    {
+        switch (GameManager.Instance.GameState)
+        {
+            case GameManager.E_GameStates.InGame:
+                dialogueContainer.gameObject.SetActive(true);
+                break;
+
+            case GameManager.E_GameStates.Pause:
+                dialogueContainer.gameObject.SetActive(false);
+                break;
+        }
     }
 
     /// <summary>

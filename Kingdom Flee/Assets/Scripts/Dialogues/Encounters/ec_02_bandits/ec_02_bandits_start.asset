@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
+  m_Name: ec_02_bandits_start
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: ec_02_bandits_start
+  <ignoreGameState>k__BackingField: 0
+  <dialogueLines>k__BackingField:
+  - <speakerName>k__BackingField: Civilian A
+    <textLine>k__BackingField: Hey, peoples !
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: King
+    <textLine>k__BackingField: He.. Quiet, fool !
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Bandit A
+    <textLine>k__BackingField: Huh ? Wh... Ooooh, look what we have here. What a
+      nice looking gang.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Bandit B
+    <textLine>k__BackingField: I don't like how this one is dressed. Who do you think
+      you are, the king or some shit ?
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Civilian A
+    <textLine>k__BackingField: ...
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Civilian B
+    <textLine>k__BackingField: ...
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Civilian C
+    <textLine>k__BackingField: ...
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: King
+    <textLine>k__BackingField: ... Dumb.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Bandit A
+    <textLine>k__BackingField: 'Woh, listen here, let''s not get angry, shall we
+      ? You are a merchant, aren''t you ? You look like one. '
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Bandit A
+    <textLine>k__BackingField: 'You see, we kinda are merchants ourselves. Kinda.
+      Here''s a cool trade between colleagues : your lives for 5 golds. How''s that
+      ?'
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  - <speakerName>k__BackingField: Civilian A
+    <textLine>k__BackingField: Why, you little...
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+  <dialogueValuesCount>k__BackingField: 0

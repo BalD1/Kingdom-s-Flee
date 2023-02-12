@@ -8,12 +8,14 @@ public class GameManager : Singleton<GameManager>
     public const string MAIN_SCENE = "MainScene";
     public const string MAIN_MENU = "MainMenu";
 
-    public static int FollowersCount { get; private set; }
-    public static int GoldCount { get; private set; }
+    public int FollowersCount { get; private set; }
+    public int GoldCount { get; private set; }
 
     public static Encounter currentEncounter = null;
 
     [field: SerializeField] public King Player { get; private set; }
+
+    [SerializeField] private int startCoin;
 
     #region GameState
 
@@ -75,11 +77,13 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        AddGold(startCoin);
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
     private void SearchForPlayer()
@@ -112,10 +116,13 @@ public class GameManager : Singleton<GameManager>
     }
     public static void UpdateFollowersCount(int amount)
     {
-        FollowersCount += amount;
+        Instance.FollowersCount += amount;
         UIManager.Instance.UpdateFollowersCount();
 
-        if (FollowersCount <= 0) GameManager.Instance.GameState = E_GameStates.GameOver;
+        if (amount > 0) FollowersManager.Instance.SpawnFollowers(amount);
+        else FollowersManager.Instance.KillFollowers(-amount);
+
+        if (Instance.FollowersCount <= 0) GameManager.Instance.GameState = E_GameStates.GameOver;
     }
 
     public static void AddGold(int amount)
@@ -128,7 +135,7 @@ public class GameManager : Singleton<GameManager>
     }
     public static void UpdateGoldCount(int amount)
     {
-        GoldCount += amount;
+        Instance.GoldCount += amount;
         UIManager.Instance.UpdateGoldCount();
     }
 

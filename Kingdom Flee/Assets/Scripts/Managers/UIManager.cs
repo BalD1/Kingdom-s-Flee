@@ -30,6 +30,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject settingsPanel;
 
+    [SerializeField] private SO_ButtonsPreset buttonPreset;
+
+    [InspectorButton(nameof(SetupButtons), ButtonWidth = 150)]
+    [SerializeField] private bool setupButtons;
+
     public GameObject HUD { get => hud; }
 
     protected override void Awake()
@@ -37,6 +42,16 @@ public class UIManager : Singleton<UIManager>
         base.Awake();
 
         GameManager.Instance.D_gameStateChange += WindowsManager;
+    }
+
+    private void SetupButtons()
+    {
+        Button[] buttons = GameObject.FindObjectsOfType<Button>();
+
+        foreach (var item in buttons)
+        {
+            buttonPreset.SetupButton(item);
+        }
     }
 
     public void WindowsManager()
@@ -70,12 +85,12 @@ public class UIManager : Singleton<UIManager>
 
     public void UpdateFollowersCount()
     {
-        followersCount.text = "x " + GameManager.FollowersCount;
+        followersCount.text = "x " + GameManager.Instance.FollowersCount;
     }
 
     public void UpdateGoldCount()
     {
-        goldCount.text = "x " + GameManager.GoldCount;
+        goldCount.text = "x " + GameManager.Instance.GoldCount;
     }
 
     public void SetupEncounterWindow(SO_Encounter _data)

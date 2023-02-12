@@ -9,12 +9,12 @@ public class FollowersManager : Singleton<FollowersManager>
 
     [SerializeField] private Transform followersDirectory;
 
-    [field: SerializeField] public GameObject[] followers { get; private set; }
+    [field: SerializeField] public List<GameObject> followers { get; private set; }
 
     [SerializeField] private float randomRange = 1;
     [SerializeField] private float startDistanceBehindKing = 3;
 
-    [InspectorButton(nameof(SpawnFollowers), ButtonWidth = 150)]
+    [InspectorButton(nameof(InitiateFollowers), ButtonWidth = 150)]
     [SerializeField] private bool respawnFollowers;
 
     protected override void Awake()
@@ -24,37 +24,53 @@ public class FollowersManager : Singleton<FollowersManager>
 
     private void Start()
     {
-        SpawnFollowers();
+        InitiateFollowers();
     }
 
-    private void SpawnFollowers()
+    private void InitiateFollowers()
     {
         if (startFollowersCount <= 0) return;
 
-        if (followers.Length > 0)
+        if (followers.Count > 0)
         {
             foreach (var item in followers) Destroy(item);
         }
-        GameObject followersPF = GameAssets.Instance.FollowersPF;
 
+        followers = new List<GameObject>();
+
+        SpawnFollowers(startFollowersCount);
+
+        GameManager.AddFollowers(startFollowersCount);
+    }
+
+    public void SpawnFollowers(int count)
+    {
+        Vector2 spawnPos;
         Vector2 playerPos = GameManager.Instance.Player.transform.position;
 
-        followers = new GameObject[startFollowersCount];
-
-        Vector2 spawnPos;
-
-        for (int i = 0; i < startFollowersCount; i++)
+        for (int i = 0; i < count; i++)
         {
             spawnPos = playerPos;
             spawnPos.x += Random.Range(-randomRange, randomRange) - startDistanceBehindKing - randomRange;
             spawnPos.y = 0;
 
-            GameObject gO = Instantiate(followersPF, spawnPos, Quaternion.identity);
+            GameObject gO = Instantiate(GameAssets.Instance.FollowersPF, spawnPos, Quaternion.identity);
             gO.transform.SetParent(followersDirectory, true);
 
-            followers[i] = gO;
+            followers.Add(gO);
         }
+    }
 
-        GameManager.AddFollowers(startFollowersCount);
+    public void KillFollowers(int count)
+    {
+        if (count <= 0) return;
+
+        int idx = Random.Range(0, followers.Count);
+        GameObject f = followers[idx];
+        followers.RemoveAt(idx);
+
+        Destroy(f);
+
+        KillFollowers(count - 1);
     }
 }

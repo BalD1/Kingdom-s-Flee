@@ -96,6 +96,8 @@ public class Encounter : MonoBehaviour
             item?.OnTrigger();
         }
 
+        if (GameManager.Instance.FollowersCount <= 0) return;
+
         if (selected.dialogueAfterChoice != null) DialogueManager.Instance.StartDialogue(selected.dialogueAfterChoice, EndEncouter, vals);
         else EndEncouter();
     }
