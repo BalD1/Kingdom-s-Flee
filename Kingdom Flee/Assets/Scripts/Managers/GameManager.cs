@@ -92,7 +92,6 @@ public class GameManager : Singleton<GameManager>
         if (GameState == E_GameStates.InGame) AddGold(startCoin);
     }
 
-
     public void ReloadScene()
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
@@ -171,7 +170,7 @@ public class GameManager : Singleton<GameManager>
     public void PauseHandler()
     {
         if (GameState == E_GameStates.InGame) GameState = E_GameStates.Pause;
-        else if (GameState == E_GameStates.InGame) GameState = E_GameStates.InGame;
+        else if (GameState == E_GameStates.Pause) GameState = E_GameStates.InGame;
     }
 
     private void OnGUI()

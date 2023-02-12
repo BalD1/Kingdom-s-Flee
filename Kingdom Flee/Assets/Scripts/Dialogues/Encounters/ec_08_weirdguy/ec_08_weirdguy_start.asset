@@ -52,7 +52,7 @@ MonoBehaviour:
     <sfx>k__BackingField: {fileID: 0}
     <textColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
   - <speakerName>k__BackingField: ???
-    <textLine>k__BackingField: I HAVEN'T TALKED TO YOU, STUPID HUMAN LEARN TO READ
+    <textLine>k__BackingField: I HAVEN'T TALKED TO YOU, STUPID HUMAN. LEARN TO READ
       THE ROOM
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     <textLine>k__BackingField: ... Sorry...
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.01
+      <value>k__BackingField: 0.04
     <sfx>k__BackingField: {fileID: 0}
     <textColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
   <dialogueValuesCount>k__BackingField: 0

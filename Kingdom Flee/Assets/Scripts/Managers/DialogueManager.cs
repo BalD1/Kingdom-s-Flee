@@ -205,8 +205,9 @@ public class DialogueManager : MonoBehaviour
 
         currentLineText = currentLine.textLine;
 
-        if (currentLine.textColor.a != 1) dialogueText.color = currentLine.textColor;
-        else dialogueText.color = Color.black;
+        Color lineColor = currentLine.textColor;
+        lineColor.a = 1;
+        dialogueText.color = lineColor;
 
         if (values != null && valuesIndex < values.Length)
         {

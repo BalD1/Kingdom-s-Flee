@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using static SO_Encounter;
 
@@ -35,6 +37,9 @@ public class UIManager : Singleton<UIManager>
     [InspectorButton(nameof(SetupButtons), ButtonWidth = 150)]
     [SerializeField] private bool setupButtons;
 
+    [SerializeField] private VolumeProfile postProcessingVolume;
+    private DepthOfField depthOfField;
+
     public GameObject HUD { get => hud; }
 
     protected override void Awake()
@@ -42,6 +47,8 @@ public class UIManager : Singleton<UIManager>
         base.Awake();
 
         GameManager.Instance.D_gameStateChange += WindowsManager;
+
+        if (postProcessingVolume != null) postProcessingVolume.TryGet<DepthOfField>(out depthOfField);
     }
 
     private void SetupButtons()
@@ -64,17 +71,26 @@ public class UIManager : Singleton<UIManager>
                 gameOverPanel?.SetActive(false);
                 pausePanel?.SetActive(false);
                 hud?.SetActive(true);
+
+                if (depthOfField != null)
+                    depthOfField.active = false;
                 break;
 
             case GameManager.E_GameStates.Pause:
                 hud.SetActive(true);
                 pausePanel.SetActive(true);
+
+                if (depthOfField != null)
+                    depthOfField.active = true;
                 break;
 
             case GameManager.E_GameStates.GameOver:
                 gameOverPanel.SetActive(true);
                 pausePanel.SetActive(false);
                 hud.SetActive(false);
+
+                if (depthOfField != null)
+                    depthOfField.active = false;
                 break;
 
             case GameManager.E_GameStates.MainMenu:
