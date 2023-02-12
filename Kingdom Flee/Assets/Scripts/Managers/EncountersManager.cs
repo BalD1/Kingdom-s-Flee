@@ -20,7 +20,6 @@ public class EncountersManager : Singleton<EncountersManager>
 
     private void Start()
     {
-        return;
         Vector2 spawnPos = GameManager.Instance.Player.transform.position;
 
         spawnPos.x += encounterSpawnDistanceFromPlayer;
