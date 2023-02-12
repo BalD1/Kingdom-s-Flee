@@ -20,6 +20,7 @@ public class SO_SingleDialogue : ScriptableObject
         [field: SerializeField] public string speakerName { get; private set; }
         [field: SerializeField] [field: TextArea] public string textLine { get; private set; }
         [field: SerializeField] public DialogueEffect[] effects { get; private set; }
+        [field: SerializeField] public AudioClip sfx { get; private set; }
     }
 
     [System.Serializable]

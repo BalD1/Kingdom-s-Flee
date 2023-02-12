@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_03_Survivors
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 7573452434113327382, guid: 31676149fb2db6a40802ad738afaf709, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Continue your way
+    <losses>k__BackingField: []
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 0
+      <cost>k__BackingField: 1
+      <maxCost>k__BackingField: 0
+      <currency>k__BackingField: 0
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 6b233033f45367e4299303516e7939d3, type: 2}
+  - <choiceName>k__BackingField: Look for the other survivors
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 2
+      <currency>k__BackingField: 0
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 4
+      <currency>k__BackingField: 0
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: b464d5544a978d04997cb277e7ea3195, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: e39603c39d1bd2944bc1b929d44429f7, type: 2}

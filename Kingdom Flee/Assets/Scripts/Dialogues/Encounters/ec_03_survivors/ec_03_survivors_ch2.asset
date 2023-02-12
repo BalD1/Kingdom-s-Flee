@@ -10,28 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
-  m_Name: ec_02_bandits_ch1
+  m_Name: ec_03_survivors_ch2
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: ec_02_bandits_ch1
+  <ID>k__BackingField: ec_02_bandits_ch2
   <ignoreGameState>k__BackingField: 0
   <dialogueLines>k__BackingField:
   - <speakerName>k__BackingField: Narrator
-    <textLine>k__BackingField: You gave {0} golds to the bandits. They let you pass.
+    <textLine>k__BackingField: You decided to look for the other people. You found
+      them, but they were cornered by wolves ! Your people attacked them to save
+      the survivors. You gained {0} followers, and {1} died in the fight.
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
       <value>k__BackingField: 0.02
-    <sfx>k__BackingField: {fileID: 0}
-  - <speakerName>k__BackingField: Bandit A
-    <textLine>k__BackingField: You're a wise man, aren't you ? Hope we'll meet again
-      !
-    <effects>k__BackingField:
-    - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.02
-    <sfx>k__BackingField: {fileID: 0}
-  - <speakerName>k__BackingField: King
-    <textLine>k__BackingField: Oh i sure hope we will.
-    <effects>k__BackingField:
-    - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.015
     <sfx>k__BackingField: {fileID: 0}
   <dialogueValuesCount>k__BackingField: 2

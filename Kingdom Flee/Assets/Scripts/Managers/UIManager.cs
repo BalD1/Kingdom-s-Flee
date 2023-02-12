@@ -46,7 +46,7 @@ public class UIManager : Singleton<UIManager>
 
     private void SetupButtons()
     {
-        Button[] buttons = GameObject.FindObjectsOfType<Button>();
+        Button[] buttons = Resources.FindObjectsOfTypeAll<Button>();
 
         foreach (var item in buttons)
         {

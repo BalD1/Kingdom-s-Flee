@@ -20,5 +20,6 @@ MonoBehaviour:
       woke up and killed {1} civilians.
     <effects>k__BackingField:
     - <effect>k__BackingField: 0
-      <value>k__BackingField: 0.2
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
   <dialogueValuesCount>k__BackingField: 2

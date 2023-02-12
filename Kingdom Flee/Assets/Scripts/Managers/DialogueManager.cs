@@ -30,8 +30,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI pressKeyToContinue;
 
-
-
+    [SerializeField] private AudioSource audioSource;
     [field: SerializeField] public SO_SingleDialogue[] Dialogues { get; private set; }
 
 #if UNITY_EDITOR
@@ -324,6 +323,10 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator Reveal(float time)
     {
         dialogueText.ForceMeshUpdate();
+
+        audioSource.clip = currentLine.sfx != null ? currentLine.sfx : AudioManager.Instance.GetClip(AudioManager.E_ClipsTags.S_DialogueBase);
+        audioSource.Play();
+
         int totalVisibleCharacters = dialogueText.textInfo.characterCount;
         int counter = 0;
 
@@ -338,7 +341,9 @@ public class DialogueManager : MonoBehaviour
                 if (visibleCount == pauseOnIndexQueue.Peek())
                 {
                     pauseOnIndexQueue.Dequeue();
+                    audioSource.Stop();
                     yield return new WaitForSeconds(1);
+                    audioSource.Play();
                 }
             }
 
@@ -349,6 +354,7 @@ public class DialogueManager : MonoBehaviour
                 loop = false;
                 revealCoroutine = null;
                 UnfinishedEffectsCount--;
+                audioSource.Stop();
             }
 
             counter++;
@@ -361,6 +367,8 @@ public class DialogueManager : MonoBehaviour
     {
         StopCoroutine(revealCoroutine);
         dialogueText.ForceMeshUpdate();
+
+        audioSource.Stop();
 
         int totalVisibleCharacters = dialogueText.textInfo.characterCount;
         dialogueText.maxVisibleCharacters = totalVisibleCharacters;

@@ -29,12 +29,11 @@ public class AudioManager : Singleton<AudioManager>
     [System.Serializable]
     public enum E_ClipsTags
     {
-        // SFX
+        M_MainMenu,
+        M_MainScene,
 
-        // Musics
-
-        MainMenu,
-        MainScene
+        S_Clic,
+        S_DialogueBase,
     }
 
     [System.Serializable]
@@ -145,6 +144,16 @@ public class AudioManager : Singleton<AudioManager>
         }
 
         Debug.LogError("Could not find " + key + " in sfxClipsByTag");
+    }
+
+    public AudioClip GetClip(E_ClipsTags tag)
+    {
+        foreach (var item in sfxClipsByTag)
+        {
+            if (item.tag == tag) return item.clip;
+        }
+
+        return null;
     }
 
     public void PauseMusic() => musicSource.Pause();
