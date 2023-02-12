@@ -21,6 +21,7 @@ public class SO_SingleDialogue : ScriptableObject
         [field: SerializeField] [field: TextArea] public string textLine { get; private set; }
         [field: SerializeField] public DialogueEffect[] effects { get; private set; }
         [field: SerializeField] public AudioClip sfx { get; private set; }
+        [field: SerializeField] public Color textColor { get; private set; }
     }
 
     [System.Serializable]

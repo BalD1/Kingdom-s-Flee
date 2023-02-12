@@ -205,6 +205,9 @@ public class DialogueManager : MonoBehaviour
 
         currentLineText = currentLine.textLine;
 
+        if (currentLine.textColor.a != 1) dialogueText.color = currentLine.textColor;
+        else dialogueText.color = Color.black;
+
         if (values != null && valuesIndex < values.Length)
         {
             string sub = "{" + valuesIndex + "}";

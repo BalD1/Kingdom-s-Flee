@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154cf17048984b147a8c076ae93dcb0b, type: 3}
+  m_Name: ec_08_weirdguy_ch3
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: ec_08_weirdguy_ch3
+  <ignoreGameState>k__BackingField: 0
+  <dialogueLines>k__BackingField:
+  - <speakerName>k__BackingField: Narrator
+    <textLine>k__BackingField: You decided to keep it safe, and refuse the thing's
+      bet.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 0}
+    <textColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  - <speakerName>k__BackingField: ???
+    <textLine>k__BackingField: Huh, you're no fun... Welp, i'll be on my way then.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 8300000, guid: d7f4168864d0c2d4aa3df99ea4c5d908, type: 3}
+    <textColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  - <speakerName>k__BackingField: ???
+    <textLine>k__BackingField: Until next time, King.
+    <effects>k__BackingField:
+    - <effect>k__BackingField: 0
+      <value>k__BackingField: 0.02
+    <sfx>k__BackingField: {fileID: 8300000, guid: 2b9c44af2c6ebe247b7bb2567a0c2ea7, type: 3}
+    <textColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
+  <dialogueValuesCount>k__BackingField: 2

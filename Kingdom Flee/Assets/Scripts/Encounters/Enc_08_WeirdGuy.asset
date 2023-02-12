@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7996319a61785244a8e263f32f330c20, type: 3}
+  m_Name: Enc_08_WeirdGuy
+  m_EditorClassIdentifier: 
+  <prefabAsset>k__BackingField: {fileID: 1915965060751253101, guid: 0cb5fe1618ad473428b051f79106c49e, type: 3}
+  <choices>k__BackingField:
+  - <choiceName>k__BackingField: Bet people
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 5
+      <currency>k__BackingField: 0
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 8
+      <currency>k__BackingField: 0
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 4c62480531a8b17409a41b0e7672ad6a, type: 2}
+  - <choiceName>k__BackingField: Bet gold
+    <losses>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 4
+      <currency>k__BackingField: 1
+    <rewards>k__BackingField:
+    - <randomCost>k__BackingField: 1
+      <cost>k__BackingField: 0
+      <maxCost>k__BackingField: 6
+      <currency>k__BackingField: 1
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 43e0717b1349ba943983aaaea133331e, type: 2}
+  - <choiceName>k__BackingField: Don't bet
+    <losses>k__BackingField: []
+    <rewards>k__BackingField: []
+    <actions>k__BackingField: []
+    <dialogueAfterChoice>k__BackingField: {fileID: 11400000, guid: 3860de1d10ce3874bad0ad4c8babee7d, type: 2}
+  <dialogueBeforeChoice>k__BackingField: {fileID: 11400000, guid: 27b92a6d180953e42b8cbb52ed9719ac, type: 2}
